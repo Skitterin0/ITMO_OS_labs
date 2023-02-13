@@ -1,0 +1,8 @@
+mkdir temp
+net share "temp=C:\LAB6\2\temp"
+xcopy \\%computername%\temp\File1.txt C:\Users\SkIttER\LAB6
+SCHTASKS /Create /SC MINUTE /TN MyTask /TR 2_2.bat
+SCHTASKS /Delete /TN MyTask
+fc %~dp0temp C:\LAB6\2\temp
+xcopy \\%computername%\temp\File1.txt C:\Users\SkIttER\LAB6
+copy *.bat commands.txt
